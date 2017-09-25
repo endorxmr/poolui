@@ -1,0 +1,88 @@
+<div layout="row" flex>
+        <div layout="column" flex>
+                <md-card>
+                        <md-toolbar class="md-table-toolbar md-default">
+                                <div class="md-toolbar-tools">
+                                        <span class="md-title">Config Generator</span>
+                                </div>
+                        </md-toolbar>
+                        <md-card-content>
+                                <p class="panel-subtitle">Simply generate configurations for the most popular mining software</p>
+			
+				<div layout="column" layout-padding="" ng-cloak="" class="inputExamples" >  
+    
+			        <md-input-container flex="50">
+			          <label>Choose your hardware</label>
+			          <md-icon class="material-icons">computer</md-icon>
+			          <md-select name="type" ng-model="example_attr['with_custom_port']" ng-change="updateExample()" required="">
+			            <md-option value="3333">Port 3333 (Low-End CPUs)</md-option>
+			            <md-option value="5555">Port 5555 (Fast CPUs)</md-option>
+			            <md-option value="7777">Port 7777 (GPU rigs)</md-option>
+			            <md-option value="9000">Port 9000 (Claymore SSL)</md-option>
+				    <md-option value="80">Port 80 (Firewall bypass)</md-option>
+				    <md-option value="443">Port 443 (Firewall bypass SSL)</md-option>
+			          </md-select>
+			        </md-input-container>
+			            
+			        <md-input-container class="md-icon-float md-block">
+			          <label>Wallet Address</label>
+			          <md-icon class="material-icons">account_balance_wallet</md-icon>
+			          <input ng-model="example_attr['with_custom_wallet']" ng-change="updateExample()" type="text" required="">
+			        </md-input-container>
+			        <div layout="row" flex>
+			        <div flex="initial">  
+			        <md-switch ng-model="example_attr['with_worker_id']" ng-change="updateExample()" aria-label="Worker">
+			        </md-switch> 
+			        </div>
+			        <div flex="100">
+			        <md-input-container class="md-icon-float md-block">  
+			          <label>Worker Name</label>
+			          <md-icon class="material-icons">add_box</md-icon>
+			          <input ng-model="example_attr['with_custom_worker']" ng-disabled="!example_attr['with_worker_id']" ng-change="updateExample()" type="text">
+			        </md-input-container>
+			        </div>
+			        </div>
+			        <div layout="row" flex>
+			        <div flex="initial">  
+			        <md-switch ng-model="example_attr['with_mail']" ng-change="updateExample()" aria-label="Email">
+			        </md-switch>
+			        </div>
+			        <div flex="100">
+			        <md-input-container class="md-icon-float md-block">
+			          <label>E-mail Address</label>
+			          <md-icon class="material-icons">email</md-icon>
+			          <input type="email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" ng-model="example_attr['with_custom_email']" ng-disabled="!example_attr['with_mail']" ng-change="updateExample()" type="text">
+			        </md-input-container>        
+			        </div>
+			        </div>
+			</div>
+			
+			<h3>Example configuration for <a href="https://github.com/fireice-uk/xmr-stak-cpu/releases" target="_blank">XMR-STAK-CPU</a>, <a href="https://github.com/fireice-uk/xmr-stak-amd/releases" target="_blank">XMR-STAK-AMD</a>, <a href="https://github.com/fireice-uk/xmr-stak-nvidia/releases" target="_blank">XMR-STAK-NVIDIA</a>:</h3>
+			<div class="md-body-1 code-snippet" layout='row' flex>
+					<code class='code-snippet'>
+						"pool_address": "{{ example_config['pool_address'] }}",</br>
+						"wallet_address": "{{ example_config['username'] }}",</br>
+						"pool_password": "{{ example_config['password'] }}",</br>
+					</code>
+			</div>
+			<h3>Example configuration for <a href="https://github.com/xmrig/xmrig/releases" target="_blank">XMRIG</a>, <a href="https://github.com/xmrig/xmrig-nvidia/releases" target="_blank">XMRIG-NVIDIA</a>:</h3>
+			<div class="md-body-1 code-snippet" layout='row' flex>
+					<code class='code-snippet'>      
+						"url": "{{ example_config['pool_address'] }}",</br>
+						"user": "{{ example_config['username'] }}",</br>
+						"pass": "{{ example_config['password'] }}",</br>
+            "keepalive": true,</br>
+            "nicehash": false</br>
+					</code>
+			</div>      
+			<h3>Example configuration for <a href="https://bitcointalk.org/index.php?topic=638915.0" target="_blank">Claymore's CryptoNote GPU Miner</a>:</h3>
+			<div class="md-body-1 code-snippet" layout='row' flex>
+					<code class='code-snippet'>      
+          -o stratum+tcp://{{ example_config['pool_address'] }}</br>
+          -u {{ example_config['username'] }}</br>
+          -p {{ example_config['password'] }}</br>
+					</code></br></br>*For SSL use stratum+ssl://
+			</div> 
+      <br>
+</md-card-content>
+</div>

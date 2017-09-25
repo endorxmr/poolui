@@ -66,7 +66,12 @@ var app = angular.module('poolui', [
 			templateUrl: 'user/help/faq.html',
 			controller: 'FAQCtrl',
 			activetab: 'help'
-		});
+		})
+		.when('/help/config_generator', {
+                        templateUrl: 'user/help/config_generator.html',
+                        controller: 'ConfigGeneratorCtrl',
+                        activetab: 'help'
+                });
 
 		$routeProvider.otherwise({redirectTo: '/home'});
 
