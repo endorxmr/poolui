@@ -1,8 +1,8 @@
 'use strict';
 
-app.controller('ConsoleCtrl', function($scope, $route, $filter, $timeout, $mdDialog, min_wallet_payout, dataService, timerService) {
+app.controller('ConsoleCtrl', function($scope, $route, $filter, $timeout, $mdDialog, manual_wallet, dataService, timerService) {
 	$scope.paymentThresh;
-	$scope.min_wallet_payout = min_wallet_payout;
+	$scope.manual_wallet = manual_wallet;
 	$scope.currentTab = 'Threshold'; // default tab
 	$scope.status = "";
 	$scope.statusClass = "valid";

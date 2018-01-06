@@ -68,14 +68,22 @@
 					</md-list-item>-->
 					<md-list-item>
 						<p>Minimum payout (Wallet)</p>
-						<p class="text-right">{{config.min_wallet_payout | toXMR}} XMR</p>
+						<p class="text-right">{{config.manual_wallet | toXMR}} XMR</p>
 					</md-list-item>
 					<!--<md-list-item>
 						<p>Minimum payout (BTC)</p>
 						<p class="text-right">{{config.min_btc_payout | toXMR}} XMR</p>
 					</md-list-item>-->
 					<md-list-item>
-						<p>Minimum payout (Exchange)</p>
+						<p>Minimum payout (PaymentID)</p>
+						<p class="text-right">{{config.manual_payment_id | toXMR}} XMR</p>
+					</md-list-item>
+					<md-list-item>
+						<p>Default payout (Wallet)</p>
+						<p class="text-right">{{config.min_wallet_payout | toXMR}} XMR</p>
+					</md-list-item>
+					<md-list-item>
+						<p>Default payout (PaymentID)</p>
 						<p class="text-right">{{config.min_exchange_payout | toXMR}} XMR</p>
 					</md-list-item>
 					<md-list-item>
