@@ -7,7 +7,7 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
 
 //.controller('ConfigGeneratorCtrl', function($scope) {
 
-  $scope.example_config = {
+	$scope.example_config = {
 		'pool_address': '',
 		'username': '',
 		'password': '',
@@ -17,11 +17,11 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
 	$scope.example_attr = {
 		'with_mail': false,
 		'with_worker_id': false,
-    'with_pool_address' : 'pool.supportxmr.com',
-    'with_custom_wallet': '43QGgipcHvNLBX3nunZLwVQpF6VbobmGcQKzXzQ5xMfJgzfRBzfXcJHX1tUHcKPm9bcjubrzKqTm69JbQSL4B3f6E3mNCbU',
-    'with_custom_worker': 'MyWorker',
-    'with_custom_email': 'me@email.com',
-    'with_custom_port': '5555',    
+		'with_pool_address' : 'pool.supportxmr.com',
+		'with_custom_wallet': '43QGgipcHvNLBX3nunZLwVQpF6VbobmGcQKzXzQ5xMfJgzfRBzfXcJHX1tUHcKPm9bcjubrzKqTm69JbQSL4B3f6E3mNCbU',
+		'with_custom_worker': 'MyWorker',
+		'with_custom_email': 'me@email.com',
+		'with_custom_port': '5555',
 	}
 
 
@@ -29,16 +29,26 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
 	$scope.updateExample = function() {
 		var attr = $scope.example_attr;
 		var conf = $scope.example_config;
-    
-		conf['username'] = attr['with_custom_wallet'];
-    
-    conf['pool_address'] = attr['with_pool_address'] + ':' + attr['with_custom_port']; 
 
-        
-		if (attr['with_worker_id'])
+		conf['username'] = attr['with_custom_wallet'];
+
+		conf['pool_address'] = attr['with_pool_address'] + ':' + attr['with_custom_port'];
+
+		if (attr['with_custom_port'] == '9000' || attr['with_custom_port'] == '443') {
+			conf['tls'] = 'true';
+			conf['tls-yn'] = 'Yes';
+		} else {
+			conf['tls'] = 'false';
+			conf['tls-yn'] = 'No';
+		}
+
+		if (attr['with_worker_id']) {
 			conf['password'] = attr['with_custom_worker'];
-		else
+			conf['rigid'] = attr['with_custom_worker'];
+		} else {
 			conf['password'] = 'x:';
+			conf['rigid'] = 'x:';
+		}
 
 		if (attr['with_mail'] && attr['with_worker_id'])
 			conf['password'] += ':';
@@ -50,6 +60,6 @@ app.controller('ConfigGeneratorCtrl', function($scope) {
 			conf['password'] = 'x';
 		}
 	}
-		
-  $scope.updateExample();
+
+	$scope.updateExample();
 });
