@@ -8,8 +8,9 @@
 			</md-toolbar>
 			<md-card-content>
 				<p class="panel-subtitle">Welcome to supportXMR.com! If you are new to mining, this is the place for you.</p>
-				<p>The owner of this pool is <strong>M5M400</strong>. If your miner gets banned, your payout is late, your connetion is lost - he is the one you want to ask for help. For urgent matters you can mail him at <a href="mailto: support@supportxmr.com">support@supportXMR.com</a></p>
-				<p>The pool has also quite stable and knowlegable <strong>community</strong> - you can join the <a href="https://supportxmr.chatango.com/" target="_new" style="text-decoration: underline; font-weight: bold;">chat</a> and seek the answers there :)</p>
+				<p>The owners of this pool are <strong>M5M400</strong> and <strong>Snipa22</strong>.</p>
+				<p>If your miner gets banned, your payout is late, your connetion is lost - first <b>ask for help in the chat</b>. For urgent matters you can email him at <a href="mailto: support@supportxmr.com">support@supportXMR.com</a>, but due to a high amount of support emails, turnaround can reach 1+ week. Please do not send multiple emails.</p>
+				<p>The pool has a quite stable and knowlegable <strong>community</strong> - you can join the <a href="https://supportxmr.chatango.com/" target="_new" style="text-decoration: underline; font-weight: bold;">chat</a> and seek help and a friendly chat there :)</p>
 			</md-card-content>
 		</md-card>
 		<md-card>
@@ -19,36 +20,60 @@
 				</div>
 			</md-toolbar>
 			<md-card-content>
-				<p class="panel-subtitle">You can choose between online wallets and hardware wallets - both have their pros and cons.</p>
+				<p class="panel-subtitle">You can choose between online wallets and hardware wallets - each have their pros and cons.</p>
+				<p><a href="https://getmonero.org/downloads/" target="_blank">Monero GUI Wallet</a>: The safest way to store and secure your XMR, but it is your responsibility to keep your computer and thus XMR safe.</p>
 				<p><a href="https://www.mymonero.com" target="_blank">MyMonero</a>: MyMonero is an online wallet maintained by a member of the core monero team, so while safe is still suceptable to hacks.</p>
-				<p><a href="https://getmonero.org/2017/03/29/monero-gui-beta-2-released.html" target="_blank">Monero GUI Wallet (beta2)</a>: The safest way to store and secure your XMR, although it would be your responsibility to keep your XMR safe.</p>
-				<p><a href="https://moneroaddress.org/" target="_blank">Offline wallet generator</a>: Let's you generate a wallet with no internet connetion for better security. To later check the ballance Monero GUI is best choice.</p>
+				<p><a href="https://moneroaddress.org/" target="_blank">Offline wallet generator</a>: Let's you generate a wallet with no internet connetion for better security. To later check the balance Monero GUI is best choice.</p>
 			</md-card-content>
 		</md-card>
 		<md-card>
 			<md-toolbar class="md-table-toolbar md-default">
 			  <div class="md-toolbar-tools">
-			    <span class="md-title">Pick a miner for cpu, gpu or both</span>
+				<span class="md-title">Pick a miner for cpu, gpu or both</span>
 			  </div>
 			</md-toolbar>
 			<md-card-content>
 				<p class="panel-subtitle">You can choose from variety of miners.</p>
-				<p>All are nice pieces of software and you should try what suits you best. Most common are <a href="https://github.com/fireice-uk/xmr-stak-cpu/releases" target="_new" style="text-decoration: underline">xmr-stak-cpu</a>/<a href="https://github.com/fireice-uk/xmr-stak-amd/releases" target="_new" style="text-decoration: underline;">amd</a>, <a href="https://github.com/wolf9466/wolf-xmr-miner/releases" target="_new" style="text-decoration: underline;">wolf's miner</a>, <a href="https://bitcointalk.org/index.php?topic=638915.0" target="_new" style="text-decoration: underline;">claymore's miner</a>, <a href="https://github.com/KlausT/ccminer-cryptonight/releases" target="_new" style="text-decoration: underline;">ccminer-cryptonight</a>.</p>
-				<p><h3>More info soon.</h3></p>
+				<p>All are nice pieces of software and you should try what suits you best. Most common are (ordered alphabetically):<br/>
+					<blockquote>
+						<a href="https://github.com/KlausT/ccminer-cryptonight/releases" target="_new" style="text-decoration: underline;">ccminer-cryptonight</a> (Nvidia)<br/>
+						<a href="https://bitcointalk.org/index.php?topic=638915.0" target="_new" style="text-decoration: underline;">Claymore's miner</a> (CPU, AMD)<br/>
+						<a href="https://github.com/Dead2/CryptoGoblin/releases" target="_new" style="text-decoration: underline;">CryptoGoblin</a> (CPU, Nvidia, AMD)<br/>
+						<a href="https://github.com/xmrig/xmrig/" target="_new" style="text-decoration: underline">XMRig</a> (CPU, Nvidia, AMD)<br/>
+						<a href="https://github.com/fireice-uk/xmr-stak/releases" target="_new" style="text-decoration: underline">XMR-Stak</a> (CPU, Nvidia, AMD)
+					</blockquote>
+				</p>
 			</md-card-content>
 		</md-card>
 				<md-card>
 			<md-toolbar class="md-table-toolbar md-default">
 			  <div class="md-toolbar-tools">
-			    <span class="md-title">Pick a mining server and port</span>
+				<span class="md-title">Pick a mining server and port</span>
 			  </div>
 			</md-toolbar>
 			<md-card-content>
-				<p class="panel-subtitle">Currently there is only one port type and it's PPLNS. It	helps to combat pool hopping and ensures a good payout for miners.</p>
-				<p>For pool's url use <code> pool.supportxmr.com </code></p><p>The Port is used in conjunciton with the url and is used to specify the starting difficulty. You should select this depending on the total #ing power of your rig (see port descriptions). Examples below.</p>
+				<p class="panel-subtitle">This pool uses PPLNS to determine payouts. It helps to combat pool hopping and ensures a good payout for miners.</p>
+				<p>For pool's url use <code> pool.supportxmr.com </code></p><p>The Port is used in conjunciton with the url and is used to specify the starting difficulty. You should select this depending on the total hashing power of your mining rig. Also see config examples below.</p>
+				<p class="panel-subtitle">Port descriptions:</p>
+				<blockquote>
+					<p>
+						- <strong>3333</strong> Low-end CPU<br/>
+						- <strong>5555</strong> Fast/Multi CPU<br/>
+						- <strong>7777</strong> GPU rigs<br/>
+						- <strong>9000</strong> SSL/TLS
+					</p>
+				</blockquote>
+				<p class="panel-subtitle">If you can't get through firewall, try these:</p>
+				<blockquote>
+					<p>
+						- 8080 Firewall bypass<br/>
+						- 80 Firewall bypass<br/>
+						- 443 Firewall bypass w/SSL/TLS
+					</p>
+				</blockquote>
 				<div flex layout="row">
 					<div flex></div>
-					<md-button ng-click="viewPorts($event)">View Ports list</md-button>
+					<md-button ng-click="viewPorts($event)">View complete ports list</md-button>
 					<div flex></div>
 				</div>
 			</md-card-content>
@@ -66,12 +91,21 @@
 				<p>Here are some examples of the parameters that you need to pass on to your miner software, the format matters so be careful.</p>
 				<p>Depending on your miner you need to add the required parameters via command line or config.txt</p>
 				<p>Required fields are payment <b>address</b> and <b>MinerIdentifier</b></p>
-				<blockquote>
-					<i>Username format</i> : address.paymentID+FixedDifficulty<br/>
-					<i>Password Format</i> : MinerIdentifier:Email<br/>
-				</blockquote>
+				<p>MinerIdentifier is where you can set a name for your miner. Set email if you want to be able to log into the webpage to set options.</p>
+				<p><b>Basic</b>:<br/>
+					<blockquote>
+						<b>Username</b> : address<br/>
+						<b>Password</b> : MinerIdentifier<br/>
+					</blockquote>
+				</p>
+				<p><b>Advanced</b>:<br/>
+					<blockquote>
+						<b>Username</b> : address.paymentID+FixedDifficulty<br/>
+						<b>Password</b> : MinerIdentifier:Email<br/>
+					</blockquote>
+				</p>
 				<md-list flex>
-					<md-subheader class="md-no-sticky">Username / Password Samples</md-subheader>
+					<md-subheader class="md-no-sticky">Username / Password Examples:</md-subheader>
 					<md-divider></md-divider>
 					<md-list-item class="md-3-line" ng-repeat="sample in samples">
 					  <div class="md-list-item-text" layout="column">
